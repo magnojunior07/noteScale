@@ -1,7 +1,19 @@
 package notesScale;
 
 public enum Note {
-    C, C_SHARP, D, D_SHARP, E, F, F_SHARP, G, G_SHARP, A, A_SHARP, B;
+    C("C"), C_SHARP("C#"), D("D"), D_SHARP("D#"), E("E"), F("F"), F_SHARP("F#"), G("G"), G_SHARP(
+            "G#"), A("A"), A_SHARP("A#"), B("B");
+
+    private final String symbol;
+
+    Note(String symbol) {
+        this.symbol = symbol;
+    }
+
+    @Override
+    public String toString() {
+        return symbol;
+    }
 
     public static Note fromString(String note) {
         switch (note.toUpperCase()) {
