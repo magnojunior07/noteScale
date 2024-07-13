@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class MajorScaleGraph {
 
-	private int[] majorScalePattern = { 2, 2, 1, 2, 2, 2, 1 }; // iniciando um array com os passos de tom e semitom
+	private static final int[] MAJOR_SCALE_PATTERN = {2, 2, 1, 2, 2, 2, 1}; // iniciando um array com os passos de tom e semitom
 	private String[] notes = { "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B" }; // inciando um array com as notas
 
 	private Map<String, List<String>> nodes = new HashMap<String, List<String>>(); // iniciando um hashmap para representar as vertices e com quais estao conectadas
@@ -33,7 +33,7 @@ public class MajorScaleGraph {
 			int nextNoteFromScaleIndex = i;
 
 			// executa o padrao e conecta nota encontrada na vertice da nota tonica da escala
-			for (int tone : majorScalePattern) {
+			for (int tone : MAJOR_SCALE_PATTERN) {
 				nextNoteFromScaleIndex = (nextNoteFromScaleIndex + tone) % 12;
 
 				String nextNoteFromScale = notes[nextNoteFromScaleIndex];
